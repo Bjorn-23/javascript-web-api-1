@@ -1,4 +1,4 @@
-function handleForm(event) {
+async function handleForm(event) {
     event.preventDefault()
 
     let errors = []
@@ -19,6 +19,33 @@ function handleForm(event) {
             password: event.target['password'].value,
         })
 
+        const res = await fetch("https://win23.azurewebsites.net/api/users", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: json
+        })
+
+        let data
+
+        if (res.status === 200) {
+
+            data = await res.json()
+            document.getElementById("status-messages").innerHTML += `
+            <div class="alert alert-success" role="alert">
+                ${data} 
+            </div>`
+        }     
+        else {
+            data = await res.text()
+
+            document.getElementById("status-messages").innerHTML = `
+            <div class="alert alert-warning" role="alert">
+                ${data}                
+            </div>`
+        }
+        
         
     }
 

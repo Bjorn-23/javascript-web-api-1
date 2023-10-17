@@ -13,6 +13,7 @@
 </head>
 <body>
     
+    <div id="status-messages"></div>
 
     <div class="container mt-5">
         <form onsubmit="handleForm(event)" novalidate>
@@ -40,11 +41,11 @@
                 <input id="password" type="password" required class="form-control" onkeyup="validate(this)">
                 <span id="password-error"></span>
             </div>
-            <!-- <div class="confirmPassword">
+            <div class="confirmPassword">
                 <label for="confirmPassword">Confirm Password</label>
-                <input id="confirmPassword" type="text" required class="form-control" onkeyup="validate(this)">
+                <input id="confirmPassword" type="password" required class="form-control" onkeyup="validate(this)">
                 <span id="confirmPassword-error"></span>
-            </div> -->
+            </div>
             <button type="submit" class="btn btn-success mt-5">Register now!</button>
 
         </form>
