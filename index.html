@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
+    <script defer src="scripts/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="author" content="Björn Andersson">
+    <title></title>
+</head>
+<body>
+    
+
+    <div class="container mt-5">
+        <form onsubmit="handleForm(event)" novalidate>
+            <div class="firstName">
+                <label for="firstName">First name</label>
+                <input id="firstName" type="text" required class="form-control" onkeyup="validate(this)">
+                <span id="firstName-error"></span>
+            </div>
+            <div class="lastName">
+                <label for="lastName">Last name</label>
+                <input id="lastName" type="text" required class="form-control" onkeyup="validate(this)">
+                <span id="lastName-error"></span>
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input id="email" type="email" required class="form-control" onkeyup="validate(this)">
+                <span id="email-error"></span>
+            </div>
+            <div class="phone">
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" class="form-control">
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input id="password" type="password" required class="form-control" onkeyup="validate(this)">
+                <span id="password-error"></span>
+            </div>
+            <!-- <div class="confirmPassword">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" type="text" required class="form-control" onkeyup="validate(this)">
+                <span id="confirmPassword-error"></span>
+            </div> -->
+            <button type="submit" class="btn btn-success mt-5">Register now!</button>
+
+        </form>
+
+    </div>
+    
+</body>
+</html>

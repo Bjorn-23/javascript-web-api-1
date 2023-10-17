@@ -1,0 +1,56 @@
+.container  {
+    padding: 0 20px;
+
+}
+
+.firstName { grid-area: firstName;}
+.lastName { grid-area: lastName;}
+.email { grid-area: email;}
+.password { grid-area: 0password;}
+.confirmPassword { grid-area: confirmPassword;}
+.btn { grid-area: button ;}
+
+form {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "firstName"
+                            "lastName"
+                            "email"
+                            "phone"
+                            "password"
+                            "confirmPassword"
+                            "button";
+
+    div {
+        span {
+            padding: 5px 0;
+            font-size: 0.9em;
+            color: #d81515;
+        }
+
+        .error {
+            color: #d81515;
+            border: 1px solid #d81515;
+            background-color: #d8151552;
+        }
+    }
+}
+
+
+
+
+@media (min-width: 992px) {
+    form {
+        
+      
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: auto;
+        grid-template-areas:    "firstName lastName"
+                                "email phone"
+                                "password confirmPassword"
+                                "button .";
+    }
+}
+
