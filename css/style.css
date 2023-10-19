@@ -15,11 +15,23 @@
 }
 
 .password {
-  grid-area: 0password;
+  grid-area: password;
 }
 
 .confirmPassword {
   grid-area: confirmPassword;
+}
+
+.streetName {
+  grid-area: streetName;
+}
+
+.postalCode {
+  grid-area: postalCode;
+}
+
+.city {
+  grid-area: city;
 }
 
 .btn {
@@ -31,7 +43,7 @@ form {
   gap: 20px;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "firstName" "lastName" "email" "phone" "password" "confirmPassword" "button";
+  grid-template-areas: "firstName" "lastName" "email" "password" "confirmPassword" "streetName" "postalCode" "city" "button";
 }
 form div span {
   padding: 5px 0;
@@ -48,6 +60,6 @@ form div .error {
   form {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "firstName lastName" "email phone" "password confirmPassword" "button .";
+    grid-template-areas: "firstName lastName" "email streetName" "postalCode city" "password confirmPassword" "button .";
   }
 }

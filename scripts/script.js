@@ -1,6 +1,6 @@
 async function handleForm(event) {
     event.preventDefault()
-
+    console.log(event)
     let errors = []
 
     for (let i = 0; i < event.target.length; i++) {
@@ -15,8 +15,11 @@ async function handleForm(event) {
             firstName: event.target['firstName'].value,
             lastName: event.target['lastName'].value,
             email: event.target['email'].value,
-            phone: event.target['phone'].value,
             password: event.target['password'].value,
+            confirmPassword: event.target['confirmPassword'].value,
+            streetName: event.target['streetName'].value,
+            postalCode: event.target['postalCode'].value,
+            city: event.target['city'].value,
         })
 
         const res = await fetch("https://win23.azurewebsites.net/api/users", {
@@ -58,7 +61,7 @@ function validate(element) {
         lastName: "You must enter a valid last name",
         email: "You must enter a valid email adress",
         password: "You must enter a strong valid password",
-        phone: ""
+        confirmPassword: "Passwords must match",
     }
 
     switch(element.type) {
@@ -100,8 +103,20 @@ const emailValidator = (value) => {
 }
 
 const passwordValidator = (value) => {
-    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/.test(value)) {
+    if (element.getAttribute('data-comparewith') !== null)
+        return compareValues(element)
+    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$/.test(value)) {
         return true
     }
     return false
+}
+
+
+function compareValues(value) {
+    let compareElement = document.getElementById(`${element.getattribut('data-comparewith')}`)
+   
+    if (element.value === compareElement.value)
+        return true   
+
+     return false
 }

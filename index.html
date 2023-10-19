@@ -32,10 +32,6 @@
                 <input id="email" type="email" required class="form-control" onkeyup="validate(this)">
                 <span id="email-error"></span>
             </div>
-            <div class="phone">
-                <label for="phone">Phone</label>
-                <input id="phone" type="text" class="form-control">
-            </div>
             <div class="password">
                 <label for="password">Password</label>
                 <input id="password" type="password" required class="form-control" onkeyup="validate(this)">
@@ -43,9 +39,21 @@
             </div>
             <div class="confirmPassword">
                 <label for="confirmPassword">Confirm Password</label>
-                <input id="confirmPassword" type="password" required class="form-control" onkeyup="validate(this)">
+                <input id="confirmPassword" type="password" required data-comparewith="password" class="form-control" onkeyup="validate(this)">
                 <span id="confirmPassword-error"></span>
             </div>
+            <div class="streetName">
+                <label for="streetName">Street name</label>
+                <input id="streetName" type="text" class="form-control">
+            </div>
+            <div class="postalCode">
+                <label for="postalCode">Postal code</label>
+                <input id="postalCode" type="text" class="form-control">
+            </div>
+            <div class="city">
+                <label for="city">City</label>
+                <input id="city" type="text" class="form-control">
+            </div>            
             <button type="submit" class="btn btn-success mt-5">Register now!</button>
 
         </form>
